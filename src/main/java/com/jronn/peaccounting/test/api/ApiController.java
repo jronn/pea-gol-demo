@@ -22,7 +22,9 @@ public class ApiController {
 
   @PostMapping("/nextGameState")
   public NextGameStateResponse nextGameState(@RequestBody NextGameStateRequest request) {
-    if (request.state().boardWidth() > MAX_BOARD_SIZE || request.state().boardHeight() > MAX_BOARD_SIZE || request.state().aliveCells().size() > (MAX_BOARD_SIZE * MAX_BOARD_SIZE)) {
+    if (request.state().boardWidth() > MAX_BOARD_SIZE
+            || request.state().boardHeight() > MAX_BOARD_SIZE
+            || request.state().aliveCells().size() > (MAX_BOARD_SIZE * MAX_BOARD_SIZE)) {
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Board size too large");
     }
 
