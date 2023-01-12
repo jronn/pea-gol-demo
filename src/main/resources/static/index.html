@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Game of life demo</title>
+    <style>
+        body {
+            background-color: #202324;
+        }
+
+        label {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label htmlFor="boardWidth">Width</label>
+        <input min="1" max="100" value="50" type="range" id="boardWidth" />
+    </div>
+
+    <div>
+        <label htmlFor="boardHeight">Height</label>
+        <input min="1" max="100" value="50" type="range" id="boardHeight" />
+    </div>
+    <div>
+        <label htmlFor="tickRate">Speed</label>
+        <input min="1" max="10" value="3" type="range" id="tickRate" />
+    </div>
+    <div>
+        <button onclick="startGame()" id="startBtn">Start</button>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+    <script src="main.js"></script>
+</body>
+
+</html>
